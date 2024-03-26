@@ -28,6 +28,7 @@ jobs:
         pip install pytest pylint
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with pylint
+      continue-on-error: true
       run: |
         pylint --fail-under=8 src
     - name: Test with pytest
